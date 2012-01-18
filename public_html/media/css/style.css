@@ -1,0 +1,39 @@
+/*
+ *  CSS for robertbrockie.com
+ *  ----------------------
+ */
+a:link {color:black; text-decoration: underline;}
+a:visited {color:black; text-decoration: underline;}
+a:active {color:black; text-decoration: underline;}
+a:hover {color:black; text-decoration: underline;}
+
+body
+{
+   font-family: monospace, sans-serif;
+   text-align: center;
+}
+
+hr
+{
+   color: black;
+   height:3px;
+   width:25%;
+   position: relative;
+}
+
+h1
+{
+   margin:10px;
+   font-size:24px;
+}
+
+input
+{
+   border:1px solid black;	
+}
+
+#url
+{
+	width: 500px;
+}
+
