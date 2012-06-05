@@ -20,8 +20,6 @@
 		<img src="<? base_url(); ?>media/img/other_brock.jpg" />
 </div>
 
-
-
 <script>
 $(document).ready(function() {
 

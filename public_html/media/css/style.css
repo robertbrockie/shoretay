@@ -23,6 +23,12 @@ hr
    position: relative;
 }
 
+#content
+{
+	margin: auto;
+	width:500px;
+}
+
 #url
 {
    border:5px solid grey;
@@ -46,6 +52,12 @@ hr
 	background-color: black;
 	color: white;
 	text-decoration: none;
+}
+
+#footer
+{
+	border-top: 1px solid black;
+	font-size: 12px;	
 }
 
 

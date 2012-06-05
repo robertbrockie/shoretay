@@ -8,3 +8,4 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>media/css/style.css" />
 </head>
 <body>
+<div id="content">
