@@ -1,19 +1,25 @@
-<p id="input" style="display:none;">
-		<img src="<? base_url(); ?>media/img/brock.jpg" /><br/>
-		hey brockie, can you shorten this link for me?
-		<input type="text" name="url" id="url" />
-		<input type="submit" value="shorten" id="submit"/>
-</p>
+<div id="input" style="display:none;">
+		<p class="ballon">
+			hey brockie, can you shorten this link for me?<br/>
+			<input type="text" name="url" id="url" />
+			<input type="submit" value="shorten" id="submit"/>
+		</p>
+		<img src="<? base_url(); ?>media/img/brock.jpg" />
+</div>
 
-<p id="loader">
+<div id="loader">
 	<img src="<? base_url(); ?>media/img/ajax-loader.gif"/>
-</p>
+</div>
 
-<p id="output" style="display:none;">
-		<img src="<? base_url(); ?>media/img/other_brock.jpg" /><br/>
-		sure thing other brockie! here you go <span id="short_url"></span>, would you like another?<br/>
-		<a href="<? base_url() ?>">yes</a> / <a href="#" onclick="no();">no</a>
-</p>
+<div id="output" style="display:none;">
+		<p class="ballon">
+			sure thing other brockie! here you go<br/>
+			<span id="short_url"></span><br/>
+			would you like another?<br/>
+			<a href="<? base_url() ?>">yes</a> / <a href="#" onclick="no();">no</a>
+		</p>
+		<img src="<? base_url(); ?>media/img/other_brock.jpg" />
+</div>
 
 
 
