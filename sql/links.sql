@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 05, 2012 at 11:23 AM
+-- Generation Time: Jun 05, 2012 at 06:54 PM
 -- Server version: 5.1.49
 -- PHP Version: 5.3.3-1ubuntu9.7
 
@@ -29,6 +29,7 @@ CREATE TABLE IF NOT EXISTS `links` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `redirect_link` varchar(1024) COLLATE utf8_bin NOT NULL,
   `click_count` int(11) NOT NULL DEFAULT '0',
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `redirect_link` (`redirect_link`(333))
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
