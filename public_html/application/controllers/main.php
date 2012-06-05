@@ -67,6 +67,7 @@ class Main extends CI_Controller {
 		if($this->Link_model->IsLink($short_url))
 		{
 			$link = $this->Link_model->GetLink($short_url);
+			$this->Link_model->IncrementClickCount($link->id);
 			redirect($link->redirect_link);	
 		}
 		else

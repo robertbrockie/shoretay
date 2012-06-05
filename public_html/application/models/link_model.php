@@ -60,4 +60,17 @@ class Link_model extends CI_Model
 		else
 			return false;
 	}
+	
+	/**
+		IncrementClickCount
+		-------------------
+		Increment the click count for a specific link.
+	**/
+	function IncrementClickCount($id)
+	{
+		$this->db->where('id', $id);
+		$this->db->set('click_count', 'click_count+1', FALSE);
+		$this->db->update('links');
+	}
+		
 }
