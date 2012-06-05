@@ -14,8 +14,8 @@
 		<p class="ballon">
 			sure thing other brockie! here you go<br/>
 			<span id="short_url"></span><br/>
-			would you like another?<br/>
-			<a href="<? base_url() ?>">yes</a> / <a href="#" onclick="no();">no</a>
+			would you like another?<br/><br/>
+			<span class="button"><a href="<? base_url() ?>">yes</a></span> / <span class="button"><a href="#" onclick="no();">no</a></span>
 		</p>
 		<img src="<? base_url(); ?>media/img/other_brock.jpg" />
 </div>
