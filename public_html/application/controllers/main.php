@@ -24,9 +24,10 @@ class Main extends CI_Controller {
 	}
 	
 	/**
-	 * Create a shorter link and add it to the database.
-	 */
-	public function add_link()
+		new link
+		create a new link for a url, response via JSON
+	**/
+	public function new_link()
 	{
 		$this->form_validation->set_rules('url', 'URL', 'trim|required|prep_url');
 		
@@ -35,28 +36,26 @@ class Main extends CI_Controller {
 			$url= $this->input->post('url');
 			
 			$short_url = $this->Link_model->AddLink($url);
-
+			
 			if($short_url != null)
 			{
+				$data['response'] = "success";			
 				$data['short_url'] = base_url()."r/".$short_url;
-				$this->load->view('header');
-				$this->load->view('link_view', $data);
-				$this->load->view('footer');
 			}
 			else
 			{
+				$data['response'] = "error";
 				$data['error_message'] = "could not add link, please try again.";
-				$this->load->view('header');
-				$this->load->view('link_error', $url);
-				$this->load->view('footer');
 			}
 		}
 		else
 		{
-			$this->load->view('header');
-			$this->load->view('link_input');
-			$this->load->view('footer');
+				$data['response'] = "error";
+				$data['error_message'] = "could not add link, please try again.";
 		}
+		
+		//return the json object
+		echo json_encode($data);		
 	}
 	
 	/**
