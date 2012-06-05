@@ -45,13 +45,13 @@ class Main extends CI_Controller {
 			else
 			{
 				$data['response'] = "error";
-				$data['error_message'] = "could not add link, please try again.";
+				$data['error_message'] = "Sorry, could not shorten link. Please try again.";
 			}
 		}
 		else
 		{
 				$data['response'] = "error";
-				$data['error_message'] = "could not add link, please try again.";
+				$data['error_message'] = "Sorry, could not shorten link. Please try again.";
 		}
 		
 		//return the json object

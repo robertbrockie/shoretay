@@ -2,7 +2,6 @@
 		<p class="ballon">
 			hey brockie, can you shorten this link for me?<br/>
 			<input type="text" name="url" id="url" />
-			<input type="submit" value="shorten" id="submit"/>
 		</p>
 		<img src="<? base_url(); ?>media/img/brock.jpg" />
 </div>
@@ -30,34 +29,40 @@ $(document).ready(function() {
 	$('#input').show();
 	$('#loader').hide();
 	$('#output').hide();
-	
-	
-	//override the submission
-	$('#submit').click(function(){
+	    
+	//if we hit enter click the button
+	$("#url").keyup(function(event)
+	{
+		if(event.keyCode == 13)
+		{
+			//make an ajax request to submit the form, showing the loader and unclickable div
+			$('#loader').show();
+			$('#input').hide();
 		
-		//make an ajax request to submit the form, showing the loader and unclickable div
-		$('#loader').show();
-		$('#input').hide();
-		
-		//the url we want to shorten
-		var url = $('#url').val();
+			//the url we want to shorten
+			var url = $('#url').val();
 
-		//get to work        
-		$.post("/main/new_link", { "url" : url }, function(data){ 
-			$('#loader').hide();
+			//get to work        
+			$.post("/main/new_link", { "url" : url }, function(data){ 			
+				if(data.response == "success")
+				{
+					$('#loader').hide();
+					$('#short_url').html("<b><a href='" + data.short_url + "' target='_blank'>" + data.short_url + "</a><b>");
+					$('#output').show();
+				}
+				else
+				{
+					$('#output').hide();
+					alert(data.error_message);
+					$('#loader').hide();
+					$('#input').show();
+
+				}
 			
-			if(data.response == "success")
-			{
-				$('#short_url').html("<b>" + data.short_url + "<b>");
-			}
-			else
-			{
-				alert(data.error_message);
-			}
-			$('#output').show();
-			
-		}, "json"); 
-    }); 
+			}, "json");
+		}
+	});
+
 });
 
 function no()
